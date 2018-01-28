@@ -47,8 +47,8 @@ sel_inline_text(sel_id = 'ts_1',
 
 ```{r sel_inline_img, echo=TRUE, results='asis'}
 sel_image(sel_id = 'ts_1',
-          options =  c(Option_1 = "Images/FiveThirtyEight - Pareto Optimization in Restaurant Choice.png", 
-                       Option_2 = "Images/FiveThirtyEight - Purple Reign.png",
-                       Option_3 = "Images/FiveThirtyEight - The Art of Cherry-picking a Poll.png"),
+          options =  c(Option_1 = "Vignettes/Images/FiveThirtyEight - Pareto Optimization in Restaurant Choice.png", 
+                       Option_2 = "Vignettes/Images/FiveThirtyEight - Purple Reign.png",
+                       Option_3 = "Vignettes/Images/FiveThirtyEight - The Art of Cherry-picking a Poll.png"),
           embed = TRUE)
 ```
