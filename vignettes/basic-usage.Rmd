@@ -1,0 +1,54 @@
+---
+title: "Basic Usage"
+author: "Vignette Author"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette:
+  fig_caption: yes
+vignette: >
+  %\VignetteIndexEntry{Basic Usage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+```{r load_dependencies}
+# Load necessary R packages
+library(htmltools)
+library(jsonlite)
+
+# Load all of the functions
+for (fn_src in paste0("R/",
+                      c("add_selector", "add_javascript", "sel_image", "sel_inline_text"),
+                      ".R")) {
+  source(file = fn_src); rm(fn_src)
+}
+```
+
+```{r add_javascript, results='asis'}
+# For this particular HTML document, import the necessary Javascript
+add_javascript(in_html_doc = TRUE)
+```
+
+```{r add_selector, results='asis'}
+add_selector(sel_id = 'ts_1')
+```
+
+```{r sel_inline_text, echo=TRUE, results='asis'}
+sel_inline_text(sel_id = 'ts_1',
+                options = c('Option_1' = "A nifty chart on restaurant choice.",
+                            'Option_2' = "A tribute to The Purple One.",
+                            'Option_3' = "An excellently-annotated plot."))
+```
+
+```{r sel_inline_img, echo=TRUE, results='asis'}
+sel_image(sel_id = 'ts_1',
+          options =  c(Option_1 = "Images/FiveThirtyEight - Pareto Optimization in Restaurant Choice.png", 
+                       Option_2 = "Images/FiveThirtyEight - Purple Reign.png",
+                       Option_3 = "Images/FiveThirtyEight - The Art of Cherry-picking a Poll.png"),
+          embed = TRUE)
+```
