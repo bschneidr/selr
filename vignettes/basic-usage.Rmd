@@ -2,8 +2,9 @@
 title: "Basic Usage"
 author: "Vignette Author"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette:
-  fig_caption: yes
+output: 
+  rmarkdown::html_vignette:
+    fig_caption: yes
 vignette: >
   %\VignetteIndexEntry{Basic Usage}
   %\VignetteEngine{knitr::rmarkdown}
