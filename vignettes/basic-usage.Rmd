@@ -38,17 +38,39 @@ add_javascript(in_html_doc = TRUE)
 add_selector(sel_id = 'ts_1')
 ```
 
+```{r make_plots, echo=FALSE}
+arrests_plot <- ggplot2::qplot(Murder, Assault, data = USArrests, main = "Arrests")
+iris_plot <- ggplot2::qplot(Sepal.Length, Sepal.Width, data = iris, main = "Iris")
+cars_plot <- ggplot2::qplot(mpg, wt, data = mtcars, colour = I("red"), main = "Cars")
+
+ggplot2::ggsave(plot = arrests_plot, filename = "Vignettes/Images/Arrests_Plot.png", device = 'png',
+                dpi = 320, units = 'in', width = 6, height = 3.5)
+ggplot2::ggsave(plot = iris_plot, filename = "Vignettes/Images/Iris_Plot.png", device = 'png',
+                dpi = 320, units = 'in', width = 6, height = 3.5)
+ggplot2::ggsave(plot = cars_plot, filename = "Vignettes/Images/Cars_Plot.png", device = 'png',
+                dpi = 320, units = 'in', width = 6, height = 3.5)
+```
+
 ```{r sel_inline_text, echo=TRUE, results='asis'}
 sel_inline_text(sel_id = 'ts_1',
-                options = c('Option_1' = "A nifty chart on restaurant choice.",
-                            'Option_2' = "A tribute to The Purple One.",
-                            'Option_3' = "An excellently-annotated plot."))
+                options = c('Option_1' = "A comparison of U.S. states' murder and assault rates.",
+                            'Option_2' = "Your typical iris plot.",
+                            'Option_3' = "Yet another mtcars plot."))
 ```
 
 ```{r sel_inline_img, echo=TRUE, results='asis'}
 sel_image(sel_id = 'ts_1',
-          options =  c(Option_1 = "Vignettes/Images/FiveThirtyEight - Pareto Optimization in Restaurant Choice.png", 
-                       Option_2 = "Vignettes/Images/FiveThirtyEight - Purple Reign.png",
-                       Option_3 = "Vignettes/Images/FiveThirtyEight - The Art of Cherry-picking a Poll.png"),
+          options =  c(Option_1 = "Vignettes/Images/Arrests_Plot.png", 
+                       Option_2 = "Vignettes/Images/Iris_Plot.png",
+                       Option_3 = "Vignettes/Images/Cars_Plot.png"),
           embed = TRUE)
 ```
+
+```{r}
+sel_plot(sel_id = 'ts_1',
+         options = list(Option_1 = arrests_plot,
+                        Option_2 = iris_plot,
+                        Option_3 = cars_plot),
+         embed = TRUE)
+```
+
