@@ -6,4 +6,6 @@
 *.Rproj
 *.png
 *.txt
+Deleteme*
+DeleteMe*
 inst/doc
