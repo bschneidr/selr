@@ -14,6 +14,15 @@ sel_plot <- function(sel_id = "ts_1",
   # Use this directory if the user doesn't specify a directory to be used instead.
   if (is.null(fig_output_dir)) {
     fig_output_dir <- knitr::opts_chunk$get()$fig.path
+    # Ensure that the fig_output_dir path uses forward slashes
+    fig_output_dir <- gsub(x = fig_output_dir,
+                           pattern = "\\\\+", replacement = "/")
+    # Ensure that the fig_output_dir doesn't end in a slash
+    if (grepl(x = fig_output_dir, pattern = "(/+)|(\\\\+)$")) {
+      fig_output_dir <- gsub(pattern = "(/+)|(\\\\+)$", replacement = "",
+                             x = fig_output_dir,
+                             fixed = FALSE)
+    }
   }
   
   # If the user hasn't specified options for figure appearance,
@@ -57,7 +66,7 @@ sel_plot <- function(sel_id = "ts_1",
   
   # Create an image file for each plot,
   # saving each image file into the fig_output_dir.
-  filepaths <- paste0(fig_output_dir,
+  filepaths <- paste0(fig_output_dir, "/",
                       names(options),
                       ".", 
                       dev)
