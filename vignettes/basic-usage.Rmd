@@ -14,7 +14,8 @@ vignette: >
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  fig.path = "figures", fig.width = 6, fig.height = 3.5, dev = 'png', dpi = 320
 )
 ```
 ```{r load_dependencies}
@@ -24,7 +25,7 @@ library(jsonlite)
 
 # Load all of the functions
 for (fn_src in paste0("R/",
-                      c("add_selector", "add_javascript", "sel_image", "sel_inline_text"),
+                      c("add_selector", "add_javascript", "sel_image", "sel_plot", "sel_inline_text"),
                       ".R")) {
   source(file = fn_src); rm(fn_src)
 }
@@ -67,11 +68,13 @@ sel_image(sel_id = 'ts_1',
           embed = TRUE)
 ```
 
-```{r}
-sel_plot(sel_id = 'ts_1',
-         options = list(Option_1 = arrests_plot,
-                        Option_2 = iris_plot,
-                        Option_3 = cars_plot),
+```{r, eval=TRUE, results='asis'}
+sel_plot(sel_id = "ts_1",
+         options = list('Option_1' = arrests_plot,
+                        'Option_2' = iris_plot,
+                        'Option_3' = cars_plot),
+         fig_output_dir = NULL,
+         dev = 'png', fig.width = NULL, fig.height = NULL, dpi = NULL,
          embed = TRUE)
 ```
 
