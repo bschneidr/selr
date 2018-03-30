@@ -14,7 +14,15 @@ knitr::opts_chunk$set(
 ```
 # rhtmlselect
 
-rhtmlselect adds functions that can be used in RMarkdown to add interactive functionality to HTML documents, using only client-side JavaScript. For instance, the creator of an RMarkdown document can add 'select' buttons that allow the user of the HTML document to swap the images and text that appear throughout the document.
+rhtmlselect adds functions that can be used in RMarkdown to add interactive functionality to HTML documents. For instance, the creator of an RMarkdown document can add 'select' buttons that allow the user of the HTML document to swap the images and text that appear throughout the document.
+
+The advantages of rhtmlselect over Shiny and other tools is that rhtmlselect relies entirely on client-side, in-browser processing, so you don't have to go through the trouble and cost of setting up a client-server relationship. In addition, the interactivity is implemented entirely through HTML, CSS, and plain JavaScript (no JQuery or other plugins) so that the JavaScript is reliable, dependency-free, safe, cross-browser compatible, and transparent. However, compared to Shiny, rhtmlselect's functionality is limited, so for intensive web-applications (such as web apps that perform user-specified statistical analyses), you should strongly consider using Shiny instead.
+
+Some of the applications for which rhtmlselect is a good tool include:
+
+* Interactive reports where the reader wants to view summaries for specific subsets or selections of data.
+* Presentation of statistical analyses where the reader wants to see how findings are impacted by an analyst's choice of parameters (such as a number of k-means clusters or a prior distribution)
+
 
 ## Installation
 
