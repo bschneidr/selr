@@ -2,8 +2,8 @@ Package: rhtmlselect
 Type: Package
 Title: Add Interactive Functionality in HTML Documents Using Only Client-side HTML and JavaScript
 Version: 0.1.0
-Authors@R: person("Benjamin", "Schneider", email = "benjamminschneider@gmail.com",
-    role = c("aut", "cre"))
+Authors@R: c(person(given = "Benjamin", family = "Schneider", email = "benjamminschneider@gmail.com", role = c("aut", "cre")),
+             person(given = "Zachariah", family = "Schneider", email = "zoocko@gmail.com", role = "aut"))
 Description: Adds R and JavaScript functions that can be used in RMarkdown 
     to add interactive functionality to HTML documents, using only client-side scripting. For instance, 
     the creator of an RMarkdown document can add 'select' buttons that allow the user of the HTML document
