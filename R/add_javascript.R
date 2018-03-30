@@ -2,7 +2,7 @@ add_javascript <- function(in_html_doc = TRUE,
                            filepath = NULL) {
   
   js_source_file <- system.file("js", "Add_Listener_and_Add_Change_Functions.js",
-                                package = "r_html_select")
+                                package = "rhtmlselect")
 
   if (in_html_doc) {
     js_lines <- readLines(con = js_source_file)

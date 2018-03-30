@@ -1,4 +1,4 @@
-Package: r_html_select
+Package: rhtmlselect
 Type: Package
 Title: Add Interactive Functionality in HTML Documents Using Only Client-side HTML and JavaScript
 Version: 0.1.0
