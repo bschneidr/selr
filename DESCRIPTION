@@ -1,15 +1,22 @@
-Package: Temp
+Package: r_html_select
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Add Interactive Functionality in HTML Documents Using Only Client-side HTML and JavaScript
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: person("Benjamin", "Schneider", email = "benjamminschneider@gmail.com",
+    role = c("aut", "cre"))
+Description: Adds R and JavaScript functions that can be used in RMarkdown 
+    to add interactive functionality to HTML documents, using only client-side scripting. For instance, 
+    the creator of an RMarkdown document can add 'select' buttons that allow the user of the HTML document
+    to swap the images and text that appear throughout the document.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     knitr,
     rmarkdown
+Imports:
+    knitr,
+    rmarkdown,
+    jsonlite,
+    utf8
 VignetteBuilder: knitr
