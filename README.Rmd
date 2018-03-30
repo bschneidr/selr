@@ -30,7 +30,7 @@ Eventually, the package will be available on CRAN.
 
 Here's a small example that shows how the package can be used to swap the text and plots in an HTML document depending on user input.
 
-```{r example, results='asis'}
+```{r example, results='asis', eval=FALSE}
 # NOTE: When using rhtmlselect in an RMarkdown chunk, you'll want to set results='asis'
 library(rhtmlselect)
 # For a particular HTML document, import the necessary Javascript
