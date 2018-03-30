@@ -27,12 +27,18 @@ Here's a small example that shows how the package can be used to swap the text a
 library(rhtmlselect)
 # For a particular HTML document, import the necessary Javascript
 add_javascript(in_html_doc = TRUE)
+```
+
+``` r
 # Add a selector button that the reader of the HTML document can interact with
 add_selector(sel_id = 'dataset',
              options = c('Dataset_1' = "The arrests data",
                          'Dataset_2' = "The iris data",
                          'Dataset_3' = "The cars data"),
              label = "Select a dataset:")
+```
+
+``` r
 # Create three plots which the user can choose
 arrests_plot <- ggplot2::qplot(Murder, Assault, data = USArrests, main = "Arrests")
 iris_plot <- ggplot2::qplot(Sepal.Length, Sepal.Width, data = iris, main = "Iris")
@@ -45,6 +51,9 @@ sel_plot(sel_id = "dataset",
                         'Dataset_3' = cars_plot),
          dev = 'png', fig.width = 6, fig.height = 3.5, dpi = 300,
          embed = TRUE)
+```
+
+``` r
 # Add textual descriptions of the currently-selected dataset
 sel_inline_text(sel_id = "dataset",
                 options = list("Dataset_1" = "You've selected the arrests data. Good choice.",
