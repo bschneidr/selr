@@ -3,9 +3,9 @@ function ChangeImageSrc(SelectInput) {
     var SelectionValue = SelectInput.value;
     var relevantClass = "ImageSelection";
     relevantClass = relevantClass + " " + selectId;
-    var InlineTextElements = document.getElementsByClassName(relevantClass);
-    for (i = 0; i < InlineTextElements.length; i++) {
-        AffectedSpan = InlineTextElements[i];
+    var ImageSourceElements = document.getElementsByClassName(relevantClass);
+    for (i = 0; i < ImageSourceElements.length; i++) {
+        AffectedSpan = ImageSourceElements[i];
         var ResultsListDataString = String(AffectedSpan.getAttribute("resultlistdata", 0));
         ResultListData = JSON.parse(ResultsListDataString);
         mystring = String(ResultListData[SelectionValue]);
