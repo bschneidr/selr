@@ -4,7 +4,7 @@ sel_inline_text <- function(sel_id = "ts_1",
                                            'Option_3' = "We get it already."),
                             type = 'span') {
   
-  if (!type %in% c("span", "div") {
+  if (!type %in% c("span", "div")) {
     stop("type must be either 'span' or 'div'")
   }
   
