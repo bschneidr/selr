@@ -5,11 +5,11 @@ function ChangeImageSrc(SelectInput) {
     relevantClass = relevantClass + " " + selectId;
     var ImageSourceElements = document.getElementsByClassName(relevantClass);
     for (i = 0; i < ImageSourceElements.length; i++) {
-        AffectedSpan = ImageSourceElements[i];
-        var ResultsListDataString = String(AffectedSpan.getAttribute("resultlistdata", 0));
+        AffectedElement = ImageSourceElements[i];
+        var ResultsListDataString = String(AffectedElement.getAttribute("resultlistdata", 0));
         ResultListData = JSON.parse(ResultsListDataString);
         mystring = String(ResultListData[SelectionValue]);
-        AffectedSpan.src = ResultListData[SelectionValue];
+        AffectedElement.src = ResultListData[SelectionValue];
     }
 }
 
@@ -20,11 +20,11 @@ function ChangeInlineText(SelectInput) {
     relevantClass = relevantClass + " " + selectId;
     var InlineTextElements = document.getElementsByClassName(relevantClass);
     for (i = 0; i < InlineTextElements.length; i++) {
-        AffectedSpan = InlineTextElements[i];
-        var ResultsListDataString = String(AffectedSpan.getAttribute("resultlistdata", 0));
+        AffectedElement = InlineTextElements[i];
+        var ResultsListDataString = String(AffectedElement.getAttribute("resultlistdata", 0));
         ResultListData = JSON.parse(ResultsListDataString);
         mystring = String(ResultListData[SelectionValue]);
-        AffectedSpan.textContent = ResultListData[SelectionValue];
+        AffectedElement.textContent = ResultListData[SelectionValue];
     }
 }
 
