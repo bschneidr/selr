@@ -3,7 +3,9 @@ function ChangeImageSrc(SelectInput) {
     var SelectionValue = SelectInput.value;
     var relevantClass = "ImageSelection";
     relevantClass = relevantClass + " " + selectId;
+    // Get list of elements to update
     var ImageSourceElements = document.getElementsByClassName(relevantClass);
+    // Update each element
     for (i = 0; i < ImageSourceElements.length; i++) {
         AffectedElement = ImageSourceElements[i];
         var ResultsListDataString = String(AffectedElement.getAttribute("resultlistdata", 0));
@@ -18,7 +20,9 @@ function ChangeInlineText(SelectInput) {
     var SelectionValue = SelectInput.value;
     var relevantClass = "InlineTextSelection";
     relevantClass = relevantClass + " " + selectId;
+    // Get list of elements to update
     var InlineTextElements = document.getElementsByClassName(relevantClass);
+    // Update each element
     for (i = 0; i < InlineTextElements.length; i++) {
         AffectedElement = InlineTextElements[i];
         var ResultsListDataString = String(AffectedElement.getAttribute("resultlistdata", 0));
