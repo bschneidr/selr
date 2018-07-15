@@ -19,11 +19,18 @@ sel_image <- function(sel_id = "ts_1",
   # Convert the options to JSON
   result_list_data <- jsonlite::toJSON(x = options)
   
-  span_class <- paste0("ImageSelection", " ", sel_id)
   
-  result_list_data <- jsonlite::toJSON(options)
+  # Create list of select ids
+  sel_id_list <- paste0("<sel_id>", 
+                        sel_id,
+                        "</sel_id>",
+                        collapse = "")
   
+  span_class <- "ImageSelection"
+  
+  # Display the first option
   htmltools::img(src = options[1],
                  class = span_class,
+                 r_sel_id = sel_id_list,
                  resultlistdata = result_list_data)
 }
