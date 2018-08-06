@@ -19,7 +19,7 @@ You can install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("bschneidr/r_html_select")
+devtools::install_github("bschneidr/selr")
 ```
 
 Eventually, the package will be available on CRAN.
