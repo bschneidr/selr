@@ -1,4 +1,4 @@
-sel_inline_text <- function(sel_id = "ts_1",
+sel_text <- function(sel_id = "ts_1",
                             options = list('Option_1' = "The first option's text.",
                                            'Option_2' = "You get it.",
                                            'Option_3' = "We get it already."),
