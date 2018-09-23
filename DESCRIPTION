@@ -19,3 +19,4 @@ Imports:
     jsonlite,
     utf8
 VignetteBuilder: knitr
+RoxygenNote: 6.1.0
