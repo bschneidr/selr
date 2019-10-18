@@ -23,7 +23,6 @@ Some of the applications for which selr is a good tool include:
 * Interactive reports where the reader wants to view summaries for specific subsets or selections of data.
 * Presentation of statistical analyses where the reader wants to see how findings are impacted by an analyst's choice of parameters (such as a number of k-means clusters or a prior distribution)
 
-
 ## Installation
 
 You can install the development version from [GitHub](https://github.com/) with:

@@ -1,21 +1,37 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-selr
-===========
 
-selr adds functions that can be used in RMarkdown to add interactive functionality to HTML documents. For instance, the creator of an RMarkdown document can add 'select' buttons that allow the user of the HTML document to swap the images and text that appear throughout the document.
+# selr
 
-The advantages of selr over Shiny and other tools is that selr relies entirely on client-side, in-browser processing, so you don't have to go through the trouble and cost of setting up a client-server relationship. In addition, the interactivity is implemented entirely through HTML, CSS, and plain JavaScript (no JQuery or other plugins) so that the JavaScript is reliable, dependency-free, safe, cross-browser compatible, and transparent. However, compared to Shiny, selr's functionality is limited, so for intensive web-applications (such as web apps that perform user-specified statistical analyses), you should strongly consider using Shiny instead.
+selr adds functions that can be used in RMarkdown to add interactive
+functionality to HTML documents. For instance, the creator of an
+RMarkdown document can add ‘select’ buttons that allow the user of the
+HTML document to swap the images and text that appear throughout the
+document.
+
+The advantages of selr over Shiny and other tools is that selr relies
+entirely on client-side, in-browser processing, so you don’t have to go
+through the trouble and cost of setting up a client-server relationship.
+In addition, the interactivity is implemented entirely through HTML,
+CSS, and plain JavaScript (no JQuery or other plugins) so that the
+JavaScript is reliable, dependency-free, safe, cross-browser compatible,
+and transparent. However, compared to Shiny, selr’s functionality is
+limited, so for intensive web-applications (such as web apps that
+perform user-specified statistical analyses), you should strongly
+consider using Shiny instead.
 
 Some of the applications for which selr is a good tool include:
 
--   Interactive reports where the reader wants to view summaries for specific subsets or selections of data.
--   Presentation of statistical analyses where the reader wants to see how findings are impacted by an analyst's choice of parameters (such as a number of k-means clusters or a prior distribution)
+  - Interactive reports where the reader wants to view summaries for
+    specific subsets or selections of data.
+  - Presentation of statistical analyses where the reader wants to see
+    how findings are impacted by an analyst’s choice of parameters (such
+    as a number of k-means clusters or a prior distribution)
 
-Installation
-------------
+## Installation
 
-You can install the development version from [GitHub](https://github.com/) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -24,10 +40,11 @@ devtools::install_github("bschneidr/selr")
 
 Eventually, the package will be available on CRAN.
 
-Example
--------
+## Example
 
-Here's a small example that shows how the package can be used to swap the text and plots in an HTML document depending on user input.
+Here’s a small example that shows how the package can be used to swap
+the text and plots in an HTML document depending on user
+input.
 
 ``` r
 # NOTE: When using selr in an RMarkdown chunk, you'll want to set results='asis'

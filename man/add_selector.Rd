@@ -21,3 +21,7 @@ Lines of HTML text which function as a selector.
 \description{
 Title
 }
+\examples{
+add_selector()
+
+}
