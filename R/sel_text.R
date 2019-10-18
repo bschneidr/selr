@@ -8,7 +8,7 @@ sel_text <- function(sel_id = "ts_1",
     stop("type must be either 'span' or 'div'")
   }
   
-  element_class <- "InlineTextSelection"
+  element_class <- "SelrTextSelection"
   
   options <- setNames(object = as.list(as.character(options)),
                       nm = names(options))

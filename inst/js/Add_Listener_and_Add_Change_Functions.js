@@ -1,7 +1,7 @@
 function ChangeImageSrc(SelectInput) {
     var selectId = String(SelectInput.id);
     var SelectionValue = SelectInput.value;
-    var relevantClass = "ImageSelection";
+    var relevantClass = "SelrImageSelection";
     
     // Get list of elements to update
     var ImageSourceElements = document.getElementsByClassName(relevantClass);
@@ -29,7 +29,7 @@ function ChangeImageSrc(SelectInput) {
 function ChangeInlineText(SelectInput) {
     var selectId = String(SelectInput.id);
     var SelectionValue = SelectInput.value;
-    var relevantClass = "InlineTextSelection";
+    var relevantClass = "SelrTextSelection";
     
     // Get list of elements to update
     var InlineTextElements = document.getElementsByClassName(relevantClass);

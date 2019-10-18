@@ -26,7 +26,7 @@ sel_image <- function(sel_id = "ts_1",
                         "</sel_id>",
                         collapse = "")
   
-  span_class <- "ImageSelection"
+  span_class <- "SelrImageSelection"
   
   # Display the first option
   htmltools::img(src = options[1],
