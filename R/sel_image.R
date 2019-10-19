@@ -45,11 +45,11 @@ sel_image <- function(sel_id = "ts_1",
   if (embed) {
     options <- lapply(X = options,
                       FUN = knitr::image_uri)
-    options <- setNames(as.list(as.character(options)),
-                        names(options))
+    options <- stats::setNames(as.list(as.character(options)),
+                               names(options))
   } else {
-    options <- setNames(as.list(as.character(options)),
-                        names(options))
+    options <- stats::setNames(as.list(as.character(options)),
+                               names(options))
   }
   
   # Convert the options to JSON

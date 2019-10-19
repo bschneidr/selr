@@ -147,8 +147,8 @@ sel_plot <- function(sel_id = "ts_1",
                             FUN = knitr::image_uri)
     names(option_images) <- names(options)
   } else {
-    option_images <- setNames(as.list(filepaths),
-                              names(options))
+    option_images <- stats::setNames(as.list(filepaths),
+                                     names(options))
   }
   
   # Convert the options to JSON

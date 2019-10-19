@@ -48,8 +48,8 @@ sel_text <- function(sel_id = "ts_1",
   
   element_class <- "SelrTextSelection"
   
-  options <- setNames(object = as.list(as.character(options)),
-                      nm = names(options))
+  options <- stats::setNames(object = as.list(as.character(options)),
+                             nm = names(options))
   
   # Create JSON list of options
   result_list_data <- jsonlite::toJSON(options)
