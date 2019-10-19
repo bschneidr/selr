@@ -12,8 +12,7 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    ggplot2,
-    knitr
+    ggplot2
 Imports:
     knitr,
     rmarkdown,
