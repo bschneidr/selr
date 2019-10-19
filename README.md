@@ -79,7 +79,7 @@ sel_plot(sel_id = "dataset",
 
 ``` r
 # Add textual descriptions of the currently-selected dataset
-sel_inline_text(sel_id = "dataset",
+sel_text(sel_id = "dataset",
                 options = list("Dataset_1" = "You've selected the arrests data. Good choice.",
                                "Dataset_2" = "You've selected the iris data- Fisher smiles upon you.",
                                "Dataset_3" = "You've selected the cars data- may you plumb its secrets."))
