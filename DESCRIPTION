@@ -12,11 +12,13 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    ggplot2
+    ggplot2,
+    knitr
 Imports:
     knitr,
     rmarkdown,
     jsonlite,
-    utf8
+    utf8,
+    htmltools
 VignetteBuilder: knitr
 RoxygenNote: 6.1.1
