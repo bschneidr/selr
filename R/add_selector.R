@@ -8,6 +8,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # RMarkdown code
 #' 
 #' ```{r add_js, results='asis'}
@@ -32,6 +33,7 @@
 #'                "Option_3" = "Ahoy")
 #' )
 #' ```
+#' }
 #' 
 add_selector <- function(sel_id = 'ts_1',
                          options = c('Option_1' = "Option #1",

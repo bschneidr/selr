@@ -22,6 +22,7 @@ Lines of HTML text which function as a selector.
 Add an HTML select object
 }
 \examples{
+\dontrun{
 # RMarkdown code
 
 ```{r add_js, results='asis'}
@@ -46,5 +47,6 @@ options = list("Option_1" = "Hello",
                "Option_3" = "Ahoy")
 )
 ```
+}
 
 }

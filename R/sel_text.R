@@ -9,6 +9,7 @@
 #'
 #' @examples
 #' 
+#' \dontrun{
 #' # RMarkdown code
 #' 
 #' ```{r add_js, results='asis'}
@@ -33,6 +34,7 @@
 #'                "Option_3" = "Ahoy")
 #' )
 #' ```
+#' }
 #' 
 sel_text <- function(sel_id = "ts_1",
                             options = list('Option_1' = "The first option's text.",

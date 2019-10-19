@@ -23,6 +23,7 @@ Create a dynamic text object
 }
 \examples{
 
+\dontrun{
 # RMarkdown code
 
 ```{r add_js, results='asis'}
@@ -47,5 +48,6 @@ options = list("Option_1" = "Hello",
                "Option_3" = "Ahoy")
 )
 ```
+}
 
 }

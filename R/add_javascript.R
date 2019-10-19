@@ -7,6 +7,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' # RMarkdown code
 #' 
 #' ```{r add_js, results='asis'}
@@ -31,6 +32,7 @@
 #'                "Option_3" = "Ahoy")
 #' )
 #' ```
+#' }
 #' 
 add_javascript <- function(in_html_doc = TRUE,
                            filepath = NULL) {

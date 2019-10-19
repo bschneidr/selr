@@ -23,6 +23,7 @@ Create a dynamic image object
 }
 \examples{
 
+\dontrun{ 
 ```{r add_js, results='asis'}
 library(selr)
 add_javascript()
@@ -45,5 +46,6 @@ options = list("Option_1" = "Plots/Iris.png",
                "Option_3" = "Plots/US Arrests.png")
 )
 ```
+}
 
 }

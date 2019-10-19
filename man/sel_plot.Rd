@@ -33,6 +33,7 @@ Create a dynamic image object containing plots
 }
 \examples{
 
+\dontrun{
 ```{r add_js, results='asis'}
 library(selr)
 add_javascript()
@@ -66,5 +67,6 @@ fig.width = 6, fig.height = 3.25, dpi = 450,
 embed = TRUE
 )
 ```
+}
 
 }

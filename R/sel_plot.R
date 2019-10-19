@@ -14,6 +14,7 @@
 #'
 #' @examples
 #' 
+#' \dontrun{
 #' ```{r add_js, results='asis'}
 #' library(selr)
 #' add_javascript()
@@ -47,6 +48,7 @@
 #' embed = TRUE
 #' )
 #' ```
+#' }
 #' 
 sel_plot <- function(sel_id = "ts_1",
                      options = NULL,

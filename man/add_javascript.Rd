@@ -18,6 +18,7 @@ Either outputs raw HTML/JavaScript code that can live inside an HTML file, or cr
 Add necessary JavaScript code to enable interactivity
 }
 \examples{
+\dontrun{
 # RMarkdown code
 
 ```{r add_js, results='asis'}
@@ -42,5 +43,6 @@ options = list("Option_1" = "Hello",
                "Option_3" = "Ahoy")
 )
 ```
+}
 
 }
