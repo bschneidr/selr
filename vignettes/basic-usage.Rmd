@@ -1,10 +1,7 @@
 ---
 title: "Basic Usage"
-author: "Vignette Author"
-date: "`r Sys.Date()`"
-output: 
-  rmarkdown::html_vignette:
-    fig_caption: yes
+author: "Ben Schneider"
+output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Basic Usage}
   %\VignetteEngine{knitr::rmarkdown}
@@ -18,17 +15,16 @@ knitr::opts_chunk$set(
   fig.path = "figures", fig.width = 6, fig.height = 3.5, dev = 'png', dpi = 320
 )
 ```
+
 ```{r load_dependencies}
 # Load necessary R packages
-library(htmltools)
-library(jsonlite)
+library(selr)
+```
 
-# Load all of the functions
-for (fn_src in paste0("R/",
-                      c("add_selector", "add_javascript", "sel_image", "sel_plot", "sel_inline_text"),
-                      ".R")) {
-  source(file = fn_src); rm(fn_src)
-}
+```{r make_plots, echo=FALSE}
+arrests_plot <- ggplot2::qplot(Murder, Assault, data = USArrests, main = "Arrests")
+iris_plot <- ggplot2::qplot(Sepal.Length, Sepal.Width, data = iris, main = "Iris")
+cars_plot <- ggplot2::qplot(mpg, wt, data = mtcars, colour = I("red"), main = "Cars")
 ```
 
 ```{r add_javascript, results='asis'}
@@ -40,31 +36,23 @@ add_javascript(in_html_doc = TRUE)
 add_selector(sel_id = 'ts_1')
 ```
 
-```{r make_plots, echo=FALSE}
-arrests_plot <- ggplot2::qplot(Murder, Assault, data = USArrests, main = "Arrests")
-iris_plot <- ggplot2::qplot(Sepal.Length, Sepal.Width, data = iris, main = "Iris")
-cars_plot <- ggplot2::qplot(mpg, wt, data = mtcars, colour = I("red"), main = "Cars")
-
-ggplot2::ggsave(plot = arrests_plot, filename = "Vignettes/Images/Arrests_Plot.png", device = 'png',
-                dpi = 320, units = 'in', width = 6, height = 3.5)
-ggplot2::ggsave(plot = iris_plot, filename = "Vignettes/Images/Iris_Plot.png", device = 'png',
-                dpi = 320, units = 'in', width = 6, height = 3.5)
-ggplot2::ggsave(plot = cars_plot, filename = "Vignettes/Images/Cars_Plot.png", device = 'png',
-                dpi = 320, units = 'in', width = 6, height = 3.5)
-```
-
 ```{r sel_inline_text, echo=TRUE, results='asis'}
-sel_inline_text(sel_id = 'ts_1',
-                options = c('Option_1' = "A comparison of U.S. states' murder and assault rates.",
-                            'Option_2' = "Your typical iris plot.",
-                            'Option_3' = "Yet another mtcars plot."))
+sel_text(sel_id = 'ts_1',
+         options = c('Option_1' = "A comparison of U.S. states' murder and assault rates.",
+                     'Option_2' = "Your typical iris plot.",
+                     'Option_3' = "Yet another mtcars plot."))
 ```
 
-```{r sel_inline_img, echo=TRUE, results='asis'}
+```{r sel_inline_img, echo=TRUE, results='asis', eval=TRUE}
+
+image_paths <- c(
+  'Option_1' = system.file("example-images/Arrests_Plot.png", package = 'selr'),
+  'Option_2' = system.file("example-images/Iris_Plot.png", package = 'selr'),
+  'Option_3' = system.file("example-images/Cars_Plot.png", package = 'selr')
+)
+
 sel_image(sel_id = 'ts_1',
-          options =  c(Option_1 = "Vignettes/Images/Arrests_Plot.png", 
-                       Option_2 = "Vignettes/Images/Iris_Plot.png",
-                       Option_3 = "Vignettes/Images/Cars_Plot.png"),
+          options = image_paths,
           embed = TRUE)
 ```
 
