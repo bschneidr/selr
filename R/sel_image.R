@@ -68,5 +68,7 @@ sel_image <- function(sel_id = "ts_1",
   htmltools::img(src = options[1],
                  class = span_class,
                  r_sel_id = sel_id_list,
-                 resultlistdata = result_list_data)
+                 resultlistdata = result_list_data,
+                 width = "100%",
+                 height = "100%")
 }

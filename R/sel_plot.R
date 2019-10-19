@@ -166,5 +166,7 @@ sel_plot <- function(sel_id = "ts_1",
   htmltools::img(src = option_images[1],
                  class = span_class,
                  r_sel_id = sel_id,
-                 resultlistdata = result_list_data)
+                 resultlistdata = result_list_data,
+                 width = "100%",
+                 height = "100%")
 }
