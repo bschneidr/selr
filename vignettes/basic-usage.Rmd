@@ -43,7 +43,7 @@ sel_text(sel_id = 'ts_1',
                      'Option_3' = "Yet another mtcars plot."))
 ```
 
-```{r sel_inline_img, echo=TRUE, results='asis', eval=TRUE}
+```{r sel_inline_img, echo=TRUE, results='asis', fig.width=6, fig.height=3, out.height=3, out.width=6}
 
 image_paths <- c(
   'Option_1' = system.file("example-images/Arrests_Plot.png", package = 'selr'),
@@ -56,13 +56,13 @@ sel_image(sel_id = 'ts_1',
           embed = TRUE)
 ```
 
-```{r, eval=TRUE, results='asis'}
+```{r, eval=TRUE, results='asis', fig.width=6, fig.height=3}
 sel_plot(sel_id = "ts_1",
          options = list('Option_1' = arrests_plot,
                         'Option_2' = iris_plot,
                         'Option_3' = cars_plot),
          fig_output_dir = NULL,
-         dev = 'png', fig.width = NULL, fig.height = NULL, dpi = NULL,
+         dev = 'png', fig.width = 6, fig.height = 3, dpi = NULL,
          embed = TRUE)
 ```
 
