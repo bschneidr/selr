@@ -1,4 +1,4 @@
-#' Title
+#' Add an HTML select object
 #'
 #' @param sel_id A unique ID for the selector which can be referenced in other places.
 #' @param options A named character vector. The elements of the character vector are the text visible in the select object. The names serve as option IDs which can be referenced in other places.
@@ -8,7 +8,30 @@
 #' @export
 #'
 #' @examples
-#' add_selector()
+#' # RMarkdown code
+#' 
+#' ```{r add_js, results='asis'}
+#' library(selr)
+#' add_javascript()
+#' ```
+#' 
+#' ```{r add_selector, results='asis'}
+#' add_selector(
+#' sel_id = "Language",
+#' options = list("Option_1" = "English",
+#'                "Option_2" = "Hebrew",
+#'                "Option_3" = "Pirate")
+#' )
+#' ```
+#' 
+#' ```{r, results='asis'}
+#' sel_text(
+#' sel_id = "Language",
+#' options = list("Option_1" = "Hello",
+#'                "Option_2" = "Shalom",
+#'                "Option_3" = "Ahoy")
+#' )
+#' ```
 #' 
 add_selector <- function(sel_id = 'ts_1',
                          options = c('Option_1' = "Option #1",

@@ -1,3 +1,39 @@
+#' Create a dynamic text object
+#'
+#' @param sel_id The id of the selector used to choose options
+#' @param options A named list, with the number of options and names of options matching those used in the selector object.
+#' @param type Whether the HTML object should be a 'span' object or a 'div' object.
+#'
+#' @return Raw HTML representing the text object.
+#' @export
+#'
+#' @examples
+#' 
+#' # RMarkdown code
+#' 
+#' ```{r add_js, results='asis'}
+#' library(selr)
+#' add_javascript()
+#' ```
+#' 
+#' ```{r add_selector, results='asis'}
+#' add_selector(
+#' sel_id = "Language",
+#' options = list("Option_1" = "English",
+#'                "Option_2" = "Hebrew",
+#'                "Option_3" = "Pirate")
+#' )
+#' ```
+#' 
+#' ```{r, results='asis'}
+#' sel_text(
+#' sel_id = "Language",
+#' options = list("Option_1" = "Hello",
+#'                "Option_2" = "Shalom",
+#'                "Option_3" = "Ahoy")
+#' )
+#' ```
+#' 
 sel_text <- function(sel_id = "ts_1",
                             options = list('Option_1' = "The first option's text.",
                                            'Option_2' = "You get it.",

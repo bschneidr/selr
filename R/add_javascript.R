@@ -1,3 +1,37 @@
+#' Add necessary JavaScript code to enable interactivity
+#'
+#' @param in_html_doc A single value, TRUE or FALSE, indicating whether the JavaScript should be included in the HTML document or if instead a separate '.js' file should be created.
+#' @param filepath If `in_html_doc = FALSE`, the filepath of the '.js' JavaScript file to be created.
+#'
+#' @return Either outputs raw HTML/JavaScript code that can live inside an HTML file, or creates a '.js' file containing the JavaScript code.
+#' @export
+#'
+#' @examples
+#' # RMarkdown code
+#' 
+#' ```{r add_js, results='asis'}
+#' library(selr)
+#' add_javascript()
+#' ```
+#' 
+#' ```{r add_selector, results='asis'}
+#' add_selector(
+#' sel_id = "Language",
+#' options = list("Option_1" = "English",
+#'                "Option_2" = "Hebrew",
+#'                "Option_3" = "Pirate")
+#' )
+#' ```
+#' 
+#' ```{r, results='asis'}
+#' sel_text(
+#' sel_id = "Language",
+#' options = list("Option_1" = "Hello",
+#'                "Option_2" = "Shalom",
+#'                "Option_3" = "Ahoy")
+#' )
+#' ```
+#' 
 add_javascript <- function(in_html_doc = TRUE,
                            filepath = NULL) {
   

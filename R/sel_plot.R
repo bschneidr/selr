@@ -1,3 +1,53 @@
+#' Create a dynamic image object containing plots
+#'
+#' @param sel_id The id of the selector used to choose options
+#' @param options A named list of plot objects, with the number of options and names of options matching those used in the selector object.
+#' @param fig_output_dir Filepath of the directory where plots should be saved. If unspecified, the default output directory for the current knitr chunk will be used.
+#' @param dev The device to be used for saving the plots ('png', 'jpg', 'pdf', etc.)
+#' @param fig.width Plot width in inches. This can be a single number or a numeric vector matching the number of options.
+#' @param fig.height Plot length in inches.  This can be a single number or a numeric vector matching the number of options.
+#' @param dpi The resolution of the image.
+#' @param embed A logical vector for whether images should be embedded directly into the HTML code as base64 strings. If FALSE, image files are referred to via links in the HTML code.
+#'
+#' @return Raw HTML representing the image object. If `embed = FALSE`, image files are created and saved in a directory determined by `fig_output_dir`.
+#' @export
+#'
+#' @examples
+#' 
+#' ```{r add_js, results='asis'}
+#' library(selr)
+#' add_javascript()
+#' ```
+#' 
+#' ```{r add_selector, results='asis'}
+#' add_selector(
+#' sel_id = "Dataset",
+#' options = list("Option_1" = "iris",
+#'                "Option_2" = "mtcars")
+#' )
+#' ```
+#' 
+#' ```{r create_plots}
+#' iris_plot <- ggplot(iris, aes(x = Sepal.Length, y = Petal.Length,
+#'                     color = Species)) + 
+#'              geom_point()
+#'              
+#' mtcars_plot <- ggplot(mtcars, aes(x = wt, y = mpg,
+#'                       color = factor(gear))) +
+#'                geom_point()
+#' 
+#' ```
+#' 
+#' ```{r image_selector, results='asis'}
+#' sel_image(
+#' sel_id = "Dataset",
+#' options = list("Option_1" = iris_plot,
+#'                "Option_2" = mtcars_plot),
+#' fig.width = 6, fig.height = 3.25, dpi = 450,
+#' embed = TRUE
+#' )
+#' ```
+#' 
 sel_plot <- function(sel_id = "ts_1",
                      options = NULL,
                      fig_output_dir = NULL,

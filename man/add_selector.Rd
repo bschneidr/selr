@@ -2,7 +2,7 @@
 % Please edit documentation in R/add_selector.R
 \name{add_selector}
 \alias{add_selector}
-\title{Title}
+\title{Add an HTML select object}
 \usage{
 add_selector(sel_id = "ts_1", options = c(Option_1 = "Option #1",
   Option_2 = "Option #2", Option_3 = "Option #3"),
@@ -19,9 +19,32 @@ add_selector(sel_id = "ts_1", options = c(Option_1 = "Option #1",
 Lines of HTML text which function as a selector.
 }
 \description{
-Title
+Add an HTML select object
 }
 \examples{
-add_selector()
+# RMarkdown code
+
+```{r add_js, results='asis'}
+library(selr)
+add_javascript()
+```
+
+```{r add_selector, results='asis'}
+add_selector(
+sel_id = "Language",
+options = list("Option_1" = "English",
+               "Option_2" = "Hebrew",
+               "Option_3" = "Pirate")
+)
+```
+
+```{r, results='asis'}
+sel_text(
+sel_id = "Language",
+options = list("Option_1" = "Hello",
+               "Option_2" = "Shalom",
+               "Option_3" = "Ahoy")
+)
+```
 
 }
