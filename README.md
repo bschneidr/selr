@@ -3,6 +3,8 @@
 
 # selr
 
+See [this page for an example](https://www.practicalsignificance.com/projects/selr/).
+
 selr adds functions that can be used in RMarkdown to add interactive
 functionality to HTML documents. For instance, the creator of an
 RMarkdown document can add ‘select’ buttons that allow the user of the
